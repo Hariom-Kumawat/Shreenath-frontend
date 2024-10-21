@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { RoutesLink } from "../ApiHelper/RoutesLink";
+import { useNavigate } from "react-router-dom";
 
 export default function AddLeaveConfigForm() {
+    const navigate = useNavigate();
+
+    const handleCancelForm = () => {
+        navigate(RoutesLink?.leave_configuration_route)
+    }
     return (
         <>
             <div className="main-view-content" id="contentWrapper">
@@ -366,7 +372,7 @@ export default function AddLeaveConfigForm() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="d-flex align-items-cente justify-content-end gap-3 mt-4 mb-3">
+                                        <div onClick={handleCancelForm} className="d-flex align-items-cente justify-content-end gap-3 mt-4 mb-3">
                                             <button className="btn btn-secondary px-5" type="button">
                                                 Cancel
                                             </button>
