@@ -709,7 +709,7 @@ export default function Sidebar() {
                                                 <span>Attendance</span>
                                             </Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Link to={RoutesLink?.leave_route}
                                                 onClick={() => toggleIsActive('leave')}
                                                 className={isActive === 'leave' ? "drop-link active" : "drop-link"} role="button">
@@ -756,7 +756,7 @@ export default function Sidebar() {
                                                 </svg>
                                                 <span>Att. Regularization</span>
                                             </Link>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <Link to={RoutesLink?.holidays_route}
                                                 onClick={() => toggleIsActive('holiday')}
