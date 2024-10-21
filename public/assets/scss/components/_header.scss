@@ -1,0 +1,179 @@
+$color_1: #25476a;
+$color_2: #ffffff;
+$background-color_1: transparent;
+$bg-white: #ffffff;
+
+.header {
+    width: calc(100% - 240px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    .navbar {
+        padding: 1rem 2rem;
+        height: 6.89rem;
+        background-color: $bg-white;
+        border-bottom: 0.1rem solid #eceff3;
+
+        // .navbar-brand {
+        //     width: 17.1rem;
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+
+        //     .main-logo {
+        //         max-width: 15rem;
+        //     }
+
+        //     .logo-icon {
+        //         display: none;
+        //         max-width: 7rem;
+        //     }
+        // }
+
+        // .navbar-brand.brand-change {
+        //     width: 4.2rem;
+        //     margin: 0;
+
+        //     .main-logo {
+        //         display: none;
+        //     }
+
+        //     .logo-icon {
+        //         display: flex;
+        //     }
+        // }
+    }
+}
+
+.navbar-collapse {
+    .btn {
+        background-color: var(--background-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        border-radius: 0rem;
+        -webkit-border-radius: 0rem;
+        -moz-border-radius: 0rem;
+        -ms-border-radius: 0rem;
+        -o-border-radius: 0rem;
+
+        svg {
+            width: 1.6rem;
+            height: 1.6rem;
+
+            path {
+                fill: var(--primary-color);
+            }
+        }
+
+        &:active {
+            border-color: transparent;
+        }
+    }
+
+    .btn.dropdown-toggle {
+        font-size: 1.4rem;
+
+        &::after {
+            content: none;
+        }
+
+        &:active {
+            border-color: transparent;
+        }
+    }
+
+    .dropdown {
+        .dropdown-menu.show {
+            right: 0 !important;
+            left: inherit !important;
+            margin-top: 1.2rem;
+        }
+
+        .dropdown-menu {
+            border: 0rem;
+            border-radius: 0rem;
+            padding: 1rem 0rem;
+            min-width: 15rem;
+            max-height: 33rem;
+            overflow: auto;
+
+            a {
+                font-size: 1.4rem;
+                display: block;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 1rem;
+                color: var(--primary-color);
+
+                svg {
+                    path {
+                        fill: var(--primary-color);
+                    }
+                }
+
+                &:hover {
+                    background: var(--primary-color);
+                    color: $color_2;
+
+                    svg {
+                        path {
+                            fill: #ffffff;
+                        }
+                    }
+                }
+
+                &:active {
+                    background: var(--primary-color);
+                    color: $color_2;
+
+                    svg {
+                        path {
+                            fill: #ffffff;
+                        }
+                    }
+                }
+            }
+
+            // li {
+            //     &:last-child {
+            //         border-top: 0.1rem solid #e7e7e7;
+            //         padding-top: 0.5rem;
+            //         margin-top: 0.5rem;
+            //     }
+            // }
+        }
+    }
+
+    .header-nav {
+        .form-group {
+            background-color: $bg-white;
+            border-radius: 0.8rem;
+            -webkit-border-radius: 0.8rem;
+            -moz-border-radius: 0.8rem;
+            -ms-border-radius: 0.8rem;
+            -o-border-radius: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .form-control {
+                min-width: 20rem;
+                font-size: 1.6rem;
+                font-weight: 500;
+                padding: 0.3rem 1.3rem;
+            }
+
+            .btn.form-label {
+                svg {
+                    path {
+                        fill: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+}

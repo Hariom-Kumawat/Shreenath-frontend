@@ -1,0 +1,224 @@
+$color_1: #818889;
+$color_2: var(--primary-color);
+$color_3: #ffffff;
+
+.sidebar-wrapper {
+  // border-right: 0.1rem solid #eceff3;
+  // border-top: 0.1rem solid #eceff3;
+  width: 24rem;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  // background: #ffffff;
+  background: linear-gradient(180deg, rgba(0, 106, 255, 0.49) 0%, rgba(13, 0, 255, 0.60) 100%), url(../img/sidebar-bg.jpg) lightgray 50% / cover no-repeat;
+
+  .sidebar-content {
+    padding: 1rem;
+
+    .aside-nav {
+      max-height: calc(100vh - 9rem);
+      overflow: overlay;
+      padding: 0rem 0.6rem;
+
+      ul {
+        list-style: none;
+        margin-bottom: 0rem;
+        padding: 0rem;
+
+        li {
+          &:not(:last-child) {
+            margin-bottom: 0.8rem;
+          }
+
+          .menu-title {
+            display: block;
+            font-size: 1.4rem;
+            color: $color_3;
+            padding: 0rem 0.8rem 0.8rem;
+          }
+
+          .drop-link {
+            font-size: 1.4rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: $color_3;
+            transition: all 0.3s linear;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s linear;
+            -ms-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+            text-decoration: none;
+            padding: 0.8rem;
+            border-radius: 0.6rem;
+
+            svg {
+              path {
+                fill: $color_3;
+              }
+
+              &.chevron {
+                path {
+                  stroke: $color_3;
+                  fill: none;
+                }
+              }
+            }
+
+            .dropdown {
+              transform: Rotate(0deg);
+              -webkit-transform: Rotate(0deg);
+              -moz-transform: Rotate(0deg);
+              -ms-transform: Rotate(0deg);
+              -o-transform: Rotate(0deg);
+            }
+
+            .dropdown.rotate {
+              transform: Rotate(180deg);
+              -webkit-transform: Rotate(180deg);
+              -moz-transform: Rotate(180deg);
+              -ms-transform: Rotate(180deg);
+              -o-transform: Rotate(180deg);
+            }
+
+            span {
+              margin-left: 1rem;
+              display: flex;
+              line-height: 1.2rem;
+            }
+
+            &:active {
+              background: rgba(255, 255, 255, 0.415);
+              border-radius: 0.6rem;
+              font-weight: 600;
+              color: $color_3;
+
+              svg {
+                path {
+                  fill: $color_3;
+                }
+
+                &.chevron {
+                  path {
+                    stroke: $color_3;
+                    fill: none;
+                  }
+                }
+              }
+            }
+          }
+
+          .drop-link.active {
+            background: rgba(255, 255, 255, 0.415);
+            border-radius: 0.6rem;
+            font-weight: 600;
+            color: $color_3;
+
+            svg {
+              path {
+                fill: $color_3;
+              }
+
+              &.chevron {
+                path {
+                  stroke: $color_3;
+                  fill: none;
+                }
+              }
+            }
+          }
+
+          .sub-menu {
+            display: none;
+
+            &.inner {
+              background: rgba(255, 255, 255, 0.2);
+              padding: 1.2rem 0px;
+              border-bottom-left-radius: 0.6rem;
+              border-bottom-right-radius: 0.6rem;
+            }
+
+            .drop-link {
+              padding: 0.8rem;
+              position: relative;
+
+              &.inner {
+                padding-left: 2.5rem;
+              }
+            }
+          }
+        }
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #ffffff;
+        border-radius: 9rem;
+        -webkit-border-radius: 9rem;
+        -moz-border-radius: 9rem;
+        -ms-border-radius: 9rem;
+        -o-border-radius: 9rem;
+      }
+
+      &::-webkit-scrollbar {
+        background-color: #ffffff;
+        width: 0.5rem;
+        border-radius: 9rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #f6f6f6;
+        border-radius: 9rem;
+        -webkit-border-radius: 9rem;
+        -moz-border-radius: 9rem;
+        -ms-border-radius: 9rem;
+        -o-border-radius: 9rem;
+      }
+    }
+
+    .navbar-brand {
+      width: 17.1rem;
+padding: 0 .8rem 2rem .8rem;
+display: block;
+
+      .main-logo {
+          max-width: 15rem;
+      }
+
+      .logo-icon {
+          display: none;
+          max-width: 7rem;
+      }
+  }
+  }
+
+  &.sidebar-wrapper.side-wrapper-w {
+    width: 10rem;
+
+    .sidebar-content {
+      .aside-nav {
+        ul {
+          li {
+            .drop-link {
+              justify-content: center;
+
+              span,
+              .fa-chevron-down,
+              .chevron {
+                display: none;
+              }
+            }
+
+            .sub-menu {
+              li {
+                .drop-link {
+                  padding: 0.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

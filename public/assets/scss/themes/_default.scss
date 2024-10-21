@@ -1,0 +1,5 @@
+// themes/_default.scss
+
+:root.default {
+    @include theme-colors(#3085FE, #bebebe, #fbfbfb, #3085FE38, #000000);
+}

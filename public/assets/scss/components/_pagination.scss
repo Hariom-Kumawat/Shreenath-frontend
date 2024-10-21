@@ -1,0 +1,32 @@
+.paggination-nav {
+    .paggination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 0.4rem;
+        list-style: none;
+
+        .page-item {
+            .page-link {
+                padding: 0.8rem;
+                width: 4rem;
+                height: 4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary-color);
+                font-size: 1.4rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 171.429%;
+                letter-spacing: -0.014rem;
+            }
+
+            .page-link.active {
+                border-radius: var(--radius-full, 9999px);
+                background: #fff;
+                box-shadow: 0px 0px 0px 1px rgba(18, 55, 105, 0.08), 0px 1px 2px 0px rgba(164, 172, 185, 0.24);
+            }
+        }
+    }
+}

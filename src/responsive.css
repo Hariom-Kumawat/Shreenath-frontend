@@ -1,0 +1,445 @@
+/* ========================================== */
+/* Breakpoint from max-width= "1399px" */
+/* ======================================== */
+@media screen and (max-width: 1399px) {
+}
+
+/* ========================================== */
+/* Breakpoint from max-width= "1199px" */
+/* ======================================== */
+
+@media screen and (max-width: 1199px) {
+  .search-modal input {
+    font-size: 1.6rem;
+  }
+
+  .search-modal .input-group {
+    padding: 0.7rem 1.2rem;
+  }
+
+  .search-wrapper h4 {
+    font-size: 1.8rem;
+  }
+
+  .search-modal .modal-body .search-wrapper .result {
+    font-size: 1.4rem;
+  }
+
+  .grid-list-sm {
+    grid-template-columns: 1fr;
+  }
+
+  .social-post {
+    margin-right: 0.8rem;
+  }
+}
+
+/* ========================================== */
+/* Breakpoint from max-width= "991px" */
+/* ======================================== */
+
+@media screen and (max-width: 991px) {
+  .login-wrapper {
+    max-width: 41rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+  }
+
+  .header-wrapper header.navbar {
+    padding: 14px 15.5px;
+  }
+  .sidebar-wrapper {
+    position: absolute;
+    left: -200%;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+  }
+
+  .sidebar-wrapper.active {
+    left: 0%;
+  }
+
+  .page-content-wrapper .Main-content-wrapper {
+    margin-top: 72px;
+    margin-left: 0;
+    padding: 8px;
+  }
+
+  .header-wrapper .navbar .container-fluid .wlc-adm {
+    display: none;
+  }
+
+  .header-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .page-content-wrapper .sidebar-wrapper .sidebar-menu-wrapper {
+    width: 50%;
+  }
+
+  .list-heading {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .check-btn {
+    padding: 0.4rem;
+  }
+  .check-btn svg {
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+
+  footer {
+    margin-left: 0;
+    width: 100%;
+    display: none;
+  }
+}
+
+/* ================================================ */
+/* Breakpoint from max-width= "767px" */
+/* ============================================== */
+
+@media screen and (max-width: 767px) {
+  .social-post {
+    margin: 0;
+  }
+
+  .photo-proof {
+    grid-template-columns: 22rem 22rem;
+  }
+
+  .category-list li {
+    width: fit-content;
+  }
+
+  .category-list li .grid-row-2 {
+    grid-template-columns: 3rem 22rem 18rem 12rem 13rem;
+  }
+
+  .category-list li .grid-row {
+    grid-template-columns: 3rem 22rem 18rem 12rem;
+  }
+}
+
+/* ================================================ */
+/*  Breakpoint from max-width= "576px" */
+/* ============================================== */
+
+@media screen and (max-width: 576px) {
+  .login-wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0rem;
+    -webkit-border-radius: 0rem;
+    -moz-border-radius: 0rem;
+    -ms-border-radius: 0rem;
+    -o-border-radius: 0rem;
+  }
+
+  .login-wrapper form input,
+  .login-modal input {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+  }
+
+  .header-wrapper header.navbar::before {
+    width: 100%;
+  }
+
+  .btn-login {
+    padding: 0.6rem 0.8rem;
+    border-radius: 99rem;
+    -webkit-border-radius: 99rem;
+    -moz-border-radius: 99rem;
+    -ms-border-radius: 99rem;
+    -o-border-radius: 99rem;
+  }
+  .btn-login svg {
+    height: 17px;
+    width: 18px;
+  }
+
+  .usr {
+    display: none;
+  }
+
+  .btn-nitifc {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .btn-nitifc svg {
+    height: 20px;
+    width: 18px;
+  }
+
+  .notification-dropdown.active {
+    top: 44px;
+  }
+
+  .notification-dropdown {
+    padding: 0.8rem 0.8rem;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+    top: 38px;
+    right: -247%;
+    width: 29rem;
+  }
+
+  .notification-dropdown .head h5 {
+    font-size: 1.4rem;
+  }
+
+  .notification-dropdown .notifc img {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .notification-dropdown a.show-all {
+    font-size: 1.2rem;
+  }
+
+  .profile-dropdown.active {
+    visibility: visible;
+    opacity: 1;
+    top: 56px;
+  }
+
+  .profile-dropdown {
+    padding: 1.6rem 2rem;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+    background-color: white;
+    position: absolute;
+    top: 50px;
+    right: 5%;
+    width: 22rem;
+  }
+
+  .search-modal input {
+    font-size: 1.3rem;
+  }
+
+  .search-modal .input-group {
+    padding: 0.4rem 1.2rem;
+  }
+  .search-modal .input-group svg {
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+
+  .search-modal .btn.btn-close {
+    font-size: 1.6rem;
+  }
+
+  .search-wrapper h4 {
+    font-size: 1.6rem;
+  }
+
+  .search-modal .modal-body .search-wrapper.recent .btn.btn-link {
+    font-size: 1.2rem;
+  }
+
+  .search-modal .modal-body .search-wrapper .result img {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .data-card-1 {
+    padding: 0rem;
+  }
+
+  .activity-bar.botttom-bar {
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0.8rem;
+  }
+
+  .social-post {
+    margin-right: 0rem;
+  }
+
+  .list-heading {
+    font-size: 1.4rem;
+    padding-bottom: 0;
+    margin-bottom: 0.8rem;
+    line-height: 100%;
+  }
+
+  .grid-list {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-list li {
+    gap: 0.6rem;
+  }
+
+  .grid-list li span {
+    font-size: 1.2rem;
+  }
+
+  .modal-body {
+    padding: 0rem 0.8rem 1.2rem 0.8rem;
+  }
+
+  .modal-header {
+    padding: 1.2rem 0.8rem 0.6rem 0.8rem;
+  }
+  .modal-header h4 {
+    font-size: 1.6rem;
+  }
+  .modal-header .btn-link svg {
+    width: 1.5rem;
+  }
+
+  .modal-body .votes svg,
+  .modal-body .likes svg,
+  .modal-body .comments svg,
+  .modal-body .views svg {
+    height: 1.6rem;
+  }
+
+  .votes,
+  .likes,
+  .comments,
+  .views {
+    font-size: 1.4rem;
+    gap: 0.2rem;
+  }
+
+  .user-det {
+    padding: 0.6rem;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+  }
+
+  .user-det img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .dp {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .user-det h5 {
+    font-size: 1.4rem;
+  }
+
+  .comments-wrapper {
+    max-height: 50rem;
+    gap: 1rem;
+  }
+
+  .comment {
+    padding: 1rem;
+  }
+
+  .comment strong {
+    font-size: 1.4rem;
+  }
+
+  .comment .time {
+    font-size: 1rem;
+  }
+
+  .comment p {
+    font-size: 1.2rem;
+  }
+
+  .page-content-wrapper .sidebar-wrapper .sidebar-menu-wrapper {
+    width: 100%;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+
+  .modal-content {
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+  }
+
+  .main-content .page-title h4 {
+    font-size: 16px;
+  }
+
+  .check-btn {
+    padding: 0.4rem;
+  }
+  .check-btn svg {
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  .nav-pills .nav-item .nav-link {
+    font-size: 1.2rem;
+    padding: 0.4rem 1.4rem;
+  }
+
+  .photo-proof {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .photo-proof img,
+  .photo-proof video {
+    width: 100%;
+    max-width: 25rem;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+  }
+
+  .bio-text {
+    font-size: 1.2rem;
+  }
+
+  .profile-card {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .profile-card span {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .grid-list li {
+    display: block;
+  }
+}

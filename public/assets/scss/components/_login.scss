@@ -1,0 +1,150 @@
+// .login-content {
+//     background-origin: border-box;
+//     background-image: url("../../../assets/img/login-bg-3.jpeg");
+//     height: 100vh;
+//     width: 100%;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     position: relative;
+
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-color: #1c16166b;
+//         z-index: 1;
+//     }
+// }
+
+.login-content {
+  height: 100vh;
+
+  .login-img-card {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1c16166b;
+      z-index: 1;
+    }
+  }
+
+  .card.login-card {
+    width: 50rem;
+    border-radius: 0rem;
+    -webkit-border-radius: 0rem;
+    -moz-border-radius: 0rem;
+    -ms-border-radius: 0rem;
+    -o-border-radius: 0rem;
+
+    .card-body {
+      padding: 4rem;
+    }
+
+    .form-control {
+      font-size: 1.4rem;
+      font-weight: 400;
+      padding: 0.8rem 0.8rem 0.8rem 3rem;
+
+      &::placeholder {
+        color: #b2b2b2;
+      }
+    }
+
+    .form-label {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .otp-input {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .form-control {
+        padding: 0.8rem;
+        text-align: center;
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+
+    .icon-input {
+      svg {
+        position: absolute;
+        bottom: 50%;
+        left: 0.9rem;
+        transform: translateY(50%);
+
+        path {
+          fill: var(--primary-color);
+        }
+      }
+
+      i {
+        position: absolute;
+        bottom: 50%;
+        left: 0.9rem;
+        transform: translateY(50%);
+      }
+
+      .password-show {
+        position: absolute;
+        bottom: 50%;
+        right: 0.9rem;
+        transform: translateY(50%);
+
+        svg {
+          position: relative;
+          bottom: inherit;
+          left: 0;
+          transform: none;
+        }
+
+        i {
+          position: relative;
+          bottom: inherit;
+          left: 0;
+          transform: none;
+        }
+      }
+    }
+  }
+}
+
+.form-control {
+  &:focus {
+    border-color: var(--primary-color);
+  }
+}
+
+.user-role {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.8rem;
+  padding: 1.8rem;
+}

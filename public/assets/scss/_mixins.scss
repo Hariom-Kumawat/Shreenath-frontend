@@ -1,0 +1,9 @@
+// _mixins.scss
+
+@mixin theme-colors($primary, $secondary, $background, $bg-side, $text) {
+    --primary-color: #{$primary};
+    --secondary-color: #{$secondary};
+    --background-color: #{$background};
+    --side-bg: #{$bg-side};
+    --text-color: #{$text};
+}

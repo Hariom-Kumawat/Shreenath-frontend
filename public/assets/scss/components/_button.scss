@@ -1,0 +1,120 @@
+$color_1: #ffffff;
+$background-color_2: #3085FE;
+$background-color_4: #2cbcff;
+
+.btn {
+    font-size: 1.4rem;
+    border-radius: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.btn.btn-primary {
+    background-color: var(--primary-color);
+    color: $color_1;
+    border: 0.1rem solid var(--primary-color);
+
+    &:hover {
+        background-color: $background-color_2;
+        border: 0.1rem solid var(--primary-color);
+    }
+
+    &:active {
+        background-color: $background-color_2;
+        border: 0.1rem solid var(--primary-color);
+    }
+}
+
+.btn.btn-outline-primary {
+    border: 0.1rem solid var(--primary-color);
+    color: var(--primary-color);
+
+    &:hover {
+        background-color: $background-color_2;
+        border: 0.1rem solid var(--primary-color);
+        color: $color_1;
+
+        svg {
+
+            path {
+                stroke: $color_1;
+                fill: $color_1;
+            }
+        }
+    }
+
+    &:active,&.active {
+        background-color: $background-color_2;
+        border: 0.1rem solid var(--primary-color);
+        color: $color_1;
+
+        svg {
+
+            path {
+                stroke: $color_1;
+                fill: $color_1;
+            }
+        }
+    }
+}
+
+.btn.btn-secondary {
+    background-color: var(--secondary-color);
+    color: $color_1;
+    border: 0.1rem solid var(--secondary-color);
+
+    &:hover {
+        background-color: #bebebe;
+        border: 0.1rem solid #bebebe;
+
+        svg {
+
+            path {
+                stroke: $color_1;
+                fill: $color_1;
+            }
+        }
+    }
+
+    &:active {
+        background-color: #b1b1b1;
+        border: 0.1rem solid #bebebe;
+
+        svg {
+
+            path {
+                stroke: $color_1;
+                fill: $color_1;
+            }
+        }
+    }
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background: var(--primary-color) !important;
+}
+
+.btn.btn-link-2 {
+    color: var(--primary-color);
+    padding: 0rem;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.custom-tool {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 1.4rem;
+}
