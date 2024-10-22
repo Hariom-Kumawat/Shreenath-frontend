@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MarkAttendance from "../../components/Modals/User/MarkAttendance";
+import MarkAttendance from '../../../components/Modals/User/MarkAttendance';
+
 import { useSelector } from "react-redux";
 
 export default function UserAttendance() {

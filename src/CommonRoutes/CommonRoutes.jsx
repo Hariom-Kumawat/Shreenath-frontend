@@ -40,10 +40,10 @@ import AddLeaveConfigForm from "../components/Add-Leave-ConfigurationForm";
 import SwitchUser from "../Pages/Auth/SwitchUser";
 import UserLayout from "../components/layout/User/Layout";
 import UserDashboard from "../Pages/User/Dashboard/Dashboard";
-import UserAttendance from "../Pages/User/Attendance";
-import AttendanceList from "../Pages/User/AttendanceList";
-import UserLeave from "../Pages/User/UserLeave";
-import LeaveRequest from "../Pages/User/LeaveRequest";
+import UserAttendance from "../Pages/User/Attendance/Attendance";
+import AttendanceList from '../Pages/User/Attendance/AttendanceList'
+import UserLeave from '../Pages/User/Leave/UserLeave';
+import LeaveRequest from "../Pages/User/Leave/LeaveRequest";
 
 
 const CommonRoutes = () => {

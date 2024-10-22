@@ -4,16 +4,12 @@ import { useSelector } from "react-redux";
 import TableFooter from "../../../components/common";
 
 export default function Leave() {
-    const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
+    
     return (
         <>
-            <div className={barIconClicked ? "main-view-content main-wrapper-w" : "main-view-content "} id="contentWrapper">
+            
                 <div className="content">
-                    <div className="content-head mb-5 d-flex align-items-start justify-content-between">
-                        <h1 className="mb-0">Leave</h1>
-                    </div>
-                    <div className="card mb-4">
-                        <div className="card-body">
+                 
                             <div className="table-head d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
                                 <div className="position-relative">
                                     <span className="search-icon">
@@ -120,10 +116,9 @@ export default function Leave() {
                                 </table>
                             </div>
                             <TableFooter />
-                        </div>
-                    </div>
+                 
                 </div>
-            </div>
+            
         </>
     )
 }
