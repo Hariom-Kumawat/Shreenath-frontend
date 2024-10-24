@@ -3,17 +3,24 @@ import { Link } from "react-router-dom";
 import MarkAttendance from '../../../components/Modals/User/MarkAttendance';
 
 import { useSelector } from "react-redux";
+import TableFooter from "../../../components/common";
 
 export default function UserAttendance() {
     const [openModal, setOpenModal] = React.useState(false);
+    const [attendance , setAttendance] = React.useState('attendance')
     const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
 
     const toggleModal = () => {
         setOpenModal(!openModal)
     }
+
+    const toggleAttendance = (action) => {
+        setAttendance(action)
+    }
+
     return (
-        <> 
-            <div className={ barIconClicked ? "main-view-content main-wrapper-w" : "main-view-content"} id="contentWrapper">
+        <>
+            <div className={barIconClicked ? "main-view-content main-wrapper-w" : "main-view-content"} id="contentWrapper">
                 <div className="content">
                     <div className="content-head mb-5 d-flex align-items-start justify-content-between">
                         <h1 className="mb-0">Attendance</h1>
@@ -65,114 +72,115 @@ export default function UserAttendance() {
                     </div>
                     <div className="card">
                         <div className="card-body">
-                            <div className="table-head mb-4 border-bottom pb-3">
-                                <div>
-                                    <input type="month" className="form-control" />
+                            <nav>
+                                <div className="nav nav-tabs border-0" id="nav-tab" role="tablist">
+                                    <button onClick={() => toggleAttendance('attendance')} className={attendance === 'attendance' ? "btn btn-outline-primary active px-5 rounded-0 rounded-start-2" :"btn btn-outline-primary px-5 rounded-0 rounded-start-2"} id="nav-home-tab"
+                                        data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="nav-home"
+                                        aria-selected="true">
+                                        Attendance
+                                    </button>
+                                    <button onClick={() => toggleAttendance('odattendance')} className={attendance === 'odattendance' ? "btn btn-outline-primary active px-5 rounded-0 rounded-start-2" :"btn btn-outline-primary px-5 rounded-0 rounded-start-2"} id="nav-profile-tab"
+                                        data-bs-toggle="tab" data-bs-target="#tab-two" type="button" role="tab" aria-controls="nav-profile"
+                                        aria-selected="false">
+                                        OD Attendance
+                                    </button>
                                 </div>
-                            </div>
-                            <div className="manage-table main-table table-responsive">
-                                <table className="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Date</th>
-                                            <th>Shift</th>
-                                            <th>Check In</th>
-                                            <th>Check Out</th>
-                                            <th>Working Hours</th>
-                                            <th>Work Type</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>01</td>
-                                            <td>25/09/2024 (Wednesday)</td>
-                                            <td>10:30-19:30</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td>Office</td>
-                                            <td>
-                                                <span className="badge bg-red-25 fw-normal rounded-pill">Absent</span>
-                                            </td>
-                                        </tr>
+                            </nav>
 
-                                        <tr className="d-none">
-                                            <td colspan="11" className="text-center fw-bold">
-                                                No Data Found
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div className="table-footer">
-                                <div className="sorted">
-                                    <h5>Sort by:</h5>
-                                    <div className="dropdown">
-                                        <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            30
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                    <path d="M6.40039 8.19922L10.0004 11.7992L13.6004 8.19922" stroke="#36394A" stroke-width="1.5"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </span>
-                                        </button>
-                                        <ul className="dropdown-menu shadow-lg">
-                                            <li><Link className="dropdown-item" to="#">10</Link></li>
-                                            <li>
-                                                <Link className="dropdown-item" to="#">20</Link>
-                                            </li>
-                                            <li>
-                                                <Link className="dropdown-item" to="#">30</Link>
-                                            </li>
-                                            <li>
-                                                <Link className="dropdown-item" to="#">40</Link>
-                                            </li>
-                                        </ul>
+                            <div className="tab-content mt-4" id="nav-tabContent">
+                            {attendance === 'attendance' &&     <div className={attendance === 'attendance' ? "tab-pane fade show active" :"tab-pane fade show "} id="tab-one" role="tabpanel" aria-labelledby="nav-home-tab"
+                                    tabindex="0">
+                                    <div className="table-head mb-4 border-bottom pb-3">
+                                        <div>
+                                            <input type="month" className="form-control" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="">
-                                    <nav className="paggination-nav" aria-label="Page navigation example">
-                                        <ul className="paggination">
-                                            <li className="page-item">
-                                                <Link className="page-link" to="#" aria-label="Previous">
-                                                    <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                        viewBox="0 0 20 20" fill="none">
-                                                        <path d="M11.8002 13.6004L8.2002 10.0004L11.8002 6.40039" stroke="#666D80"
-                                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                                    </svg></span>
-                                                </Link>
-                                            </li>
-                                            <li className="page-item">
-                                                <Link className="page-link active" to="#">1</Link>
-                                            </li>
-                                            <li className="page-item">
-                                                <Link className="page-link" to="#">2</Link>
-                                            </li>
-                                            <li className="page-item">
-                                                <Link className="page-link" to="#">3</Link>
-                                            </li>
-                                            <li className="page-item">
-                                                <Link className="page-link" to="#">...</Link>
-                                            </li>
-                                            <li className="page-item">
-                                                <Link className="page-link" to="#">7</Link>
-                                            </li>
-                                            <li className="page-item">
-                                                <Link className="page-link" to="#" aria-label="Next">
-                                                    <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                        viewBox="0 0 20 20" fill="none">
-                                                        <path d="M8.2002 13.6004L11.8002 10.0004L8.2002 6.40039" stroke="#666D80"
-                                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                                    </svg></span>
-                                                </Link>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
+                                    <div className="manage-table main-table table-responsive">
+                                        <table className="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Date</th>
+                                                    <th>Shift</th>
+                                                    <th>Check In</th>
+                                                    <th>Check Out</th>
+                                                    <th>Working Hours</th>
+                                                    <th>Work Type</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>25/09/2024 (Wednesday)</td>
+                                                    <td>10:30-19:30</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>Office</td>
+                                                    <td>
+                                                        <span className="badge bg-red-25 fw-normal rounded-pill">Absent</span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr className="d-none">
+                                                    <td colspan="11" className="text-center fw-bold">
+                                                        No Data Found
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <TableFooter />
+                                </div> }
+                             {attendance === 'odattendance' &&    <div className={attendance === 'odattendance' ? "tab-pane fade show active" :"tab-pane fade show "} id="tab-two" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                                    <div className="table-head mb-4 border-bottom pb-3">
+                                        <div>
+                                            <input type="month" className="form-control" />
+                                        </div>
+                                    </div>
+                                    <div className="manage-table main-table table-responsive">
+                                        <table className="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>M.O.C.</th>
+                                                    <th>Client</th>
+                                                    <th>Location</th>
+                                                    <th>Date</th>
+                                                    <th>Check In</th>
+                                                    <th>Check Out</th>
+                                                    <th>Reason</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>Visit</td>
+                                                    <td>TATA POWER SOLAR LTD</td>
+                                                    <td>Bikaner</td>
+                                                    <td>25/09/2024 (Wednesday)</td>
+                                                    <td>10:30</td>
+                                                    <td>-</td>
+                                                    <td>Metting</td>
+                                                    <td>
+                                                        <span className="badge bg-green-25 fw-normal rounded-pill">Present</span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr className="d-none">
+                                                    <td colspan="11" className="text-center fw-bold">
+                                                        No Data Found
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                  <TableFooter/>
+                                </div> }
                             </div>
+                        
                         </div>
                     </div>
                 </div>

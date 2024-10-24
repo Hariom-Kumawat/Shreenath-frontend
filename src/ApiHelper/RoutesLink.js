@@ -38,10 +38,23 @@ export const RoutesLink = {
     // user routes
     user_layout : '/',
     user_dashboard : '/user_dashboard',
+
     user_attendance : '/user_attendance',
-    user_attendance_list : '/attendence_list',
+    user_attendance_list : '/user_attendence_list',
+    user_outdoor_attendance_route : '/user_outdoor_attendance',
+
     user_leave : '/user_leave',
     user_leave_request : '/user_leave_request',
+
+    user_attendance_regularization :'/user_attendance-regularization',
+    user_attendance_regularization_request:'/user_attendance-regularization-request',
+    
+    user_reimbursement_request : '/user_reimbursement_request',
+    user_reimbursement : '/user_reimbursement',
+
+    user_payslip_route : '/user_payslip',
+    user_holiday_route : '/user_holiday',
+    
 
     // sites routes
     sites_route : '/sites',

@@ -13,3 +13,28 @@ export default function TableFooter() {
         </>
     )
 }
+
+{/* <thead>
+<tr>
+    {tableHeaders.map((header, index) => (
+        <th key={index}>{header}</th>
+    ))}
+</tr>
+</thead>
+<tbody>
+{tableData.map((row, rowIndex) => (
+    <tr key={rowIndex}>
+        {row.map((cell, cellIndex) => (
+            <td key={cellIndex}>{cell}</td>
+        ))}
+    </tr>
+))}
+
+
+
+<tr className="d-none">
+    <td colspan="11" className="text-center fw-bold">
+        No Data Found
+    </td>
+</tr>
+</tbody> */}

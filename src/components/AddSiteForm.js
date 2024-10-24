@@ -46,7 +46,7 @@ export default function AddSiteForm() {
                                 <div className="wizard-tabs">
                                     <ul className="nav nav-pills" id="pills-tab" role="tablist">
                                         <li className="nav-item" role="presentation">
-                                            <button className="nav-link" id="pills-BasicDetails-tab" data-bs-toggle="pill"
+                                            <button className="nav-link active" id="pills-BasicDetails-tab" data-bs-toggle="pill"
                                                 data-bs-target="#pills-BasicDetails" type="button" role="tab" aria-controls="pills-BasicDetails"
                                                 aria-selected="true">
                                                 <h6>Step 1</h6>

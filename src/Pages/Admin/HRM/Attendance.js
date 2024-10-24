@@ -14,6 +14,13 @@ export default function Attendance() {
     const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
     const dropdownOpen = useSelector((state) => state.sorting.dropdownOpen)
 
+    const attendanceOptions = {
+        daily: "Daily Attendance",
+        monthly: "Monthly Attendance",
+        arrequests: "Att Regularization Req.",
+        leave: "Leave"
+      };
+
     const toggleDailyAttendance = () => {
         setAttendance('daily')
     }
@@ -39,7 +46,8 @@ export default function Attendance() {
             <div className={barIconClicked ? "main-view-content main-wrapper-w" : "main-view-content"} id="contentWrapper">
                 <div className="content">
                     <div className="content-head mb-5 d-flex align-items-start justify-content-between">
-                        <h1 className="mb-0">Attendance</h1>
+                    <h1 className="mb-0">{attendanceOptions[attendance]}</h1>
+                        
                     </div>
                     <div className="card mb-4">
                         <div className="card-body">

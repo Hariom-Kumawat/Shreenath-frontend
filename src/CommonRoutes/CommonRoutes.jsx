@@ -44,6 +44,13 @@ import UserAttendance from "../Pages/User/Attendance/Attendance";
 import AttendanceList from '../Pages/User/Attendance/AttendanceList'
 import UserLeave from '../Pages/User/Leave/UserLeave';
 import LeaveRequest from "../Pages/User/Leave/LeaveRequest";
+import UserOutDoorRequests from "../Pages/User/Attendance/OD-Request";
+import UserMyAttendanceRegularization from "../Pages/User/Attendance-Regularization/My-Att-Regularization";
+import UserAttendanceRegularizationRequest from "../Pages/User/Attendance-Regularization/Att-Regularization-Request";
+import UserReimbursement from "../Pages/User/Reimbursement/My-Reimbursement";
+import UserReimbursementRequest from "../Pages/User/Reimbursement/Reimbursement-Request";
+import UserHolidays from "../Pages/User/Holidays";
+import UserPaySlip from "../Pages/User/Pay-Slip";
 
 
 const CommonRoutes = () => {
@@ -94,12 +101,24 @@ const CommonRoutes = () => {
 
       {/* user */}
       <Route path={RoutesLink?.user_layout} element={<UserLayout />}>
+
         <Route path={RoutesLink?.user_dashboard} element={<UserDashboard />} />
+
         <Route path={RoutesLink?.user_attendance} element={<UserAttendance />} />
         <Route path={RoutesLink?.user_attendance_list} element={<AttendanceList />} />
+        <Route path={RoutesLink?.user_outdoor_attendance_route} element={<UserOutDoorRequests/>}/>
+
         <Route path={RoutesLink?.user_leave} element={<UserLeave />} />
         <Route path={RoutesLink?.user_leave_request} element={<LeaveRequest />} />
 
+        <Route path={RoutesLink?.user_attendance_regularization} element={<UserMyAttendanceRegularization/>}/>
+        <Route path={RoutesLink?.user_attendance_regularization_request} element={<UserAttendanceRegularizationRequest/>}/>
+
+        <Route path={RoutesLink?.user_reimbursement} element={<UserReimbursement/>}/>
+        <Route path={RoutesLink?.user_reimbursement_request} element={<UserReimbursementRequest/>}/>
+
+        <Route path={RoutesLink?.user_holiday_route} element={<UserHolidays/>}/>
+        <Route path={RoutesLink?.user_payslip_route} element={<UserPaySlip/>}/>
 
       </Route>
 

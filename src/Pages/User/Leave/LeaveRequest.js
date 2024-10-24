@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function LeaveRequest() {
+export default function UserLeaveRequest() {
     return (
         <>
             <div className="main-view-content" id="contentWrapper">
