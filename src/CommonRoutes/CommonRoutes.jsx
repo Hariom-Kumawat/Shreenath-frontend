@@ -51,6 +51,7 @@ import UserReimbursement from "../Pages/User/Reimbursement/My-Reimbursement";
 import UserReimbursementRequest from "../Pages/User/Reimbursement/Reimbursement-Request";
 import UserHolidays from "../Pages/User/Holidays";
 import UserPaySlip from "../Pages/User/Pay-Slip";
+import ItemMaster from "../Pages/Admin/Sites/Item-Master";
 
 
 const CommonRoutes = () => {
@@ -65,7 +66,7 @@ const CommonRoutes = () => {
       <Route path={RoutesLink?.switch_user} element={<SwitchUser />} />
 
       {/* // adimin */}
-      <Route path={RoutesLink?.layout_route} element={<Layout />}>
+      <Route path={RoutesLink?.layout_route} element={<Layout  />}>
 
         {/* hrm routes */}
         <Route path={RoutesLink?.dashboard_route} element={<Dashboard />} />
@@ -94,6 +95,8 @@ const CommonRoutes = () => {
 
         <Route path={RoutesLink?.vendors_route} element={<Vendors />} />
         <Route path={RoutesLink?.add_vendor_route} element={<AddVendorForm />} />
+
+        <Route path={RoutesLink?.item_master_route} element={<ItemMaster/>}/>
 
         <Route path={RoutesLink?.customers_route} element={<Customers />} />
         <Route path={RoutesLink?.add_customer_route} element={<AddCustomerForm />} />

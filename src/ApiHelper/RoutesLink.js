@@ -66,6 +66,8 @@ export const RoutesLink = {
     customers_route : '/customers',
     add_customer_route : '/add_customer',
 
+    item_master_route : '/item_master',
+
     att_regularization_request : '/att_regularization_request',
     reimbursement_route : '/reimbursement_route'
 

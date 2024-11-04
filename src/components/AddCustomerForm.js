@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { json, Link } from "react-router-dom";
 import { RoutesLink } from "../ApiHelper/RoutesLink";
 // import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
@@ -10,14 +10,65 @@ export default function AddCustomerForm() {
     const { register, reset, handleSubmit, formState: { errors } } = useForm()
     const navigate = useNavigate();
 
-const handleCancelForm = () => {
-    navigate(RoutesLink?.customers_route)
-}
-
-    const onSubmit = (data) => {
-        console.log('form submitted', data);
-        reset()
+    const handleCancelForm = () => {
+        navigate(RoutesLink?.customers_route)
     }
+
+    // const onSubmit = (data) => {
+    //     console.log('form submitted', data);
+    //     reset()
+    // }
+
+    const onSubmit = async (data) => {
+        console.log('form data:' ,data );
+
+        try {
+            const response = await fetch("https://7f074tk1-4200.inc1.devtunnels.ms/S0001/api/v1/site/add-customer" , {
+                method:'POST',
+                headers:{'Content-type' : 'application/json'},
+                body:JSON.stringify(data) //convert data into json
+            })
+
+            const result = await response.json();
+            if (response.ok) {
+                console.log('customer created successfully' , result);
+                reset();
+                navigate(RoutesLink?.customers_route)
+
+            } else {
+                console.log('error creating cusotmer ', result.message);
+
+            }
+        } catch (error) {
+            console.log('network error', error);
+
+        }
+    }
+    // const onSubmit = async (data) => {
+    //     console.log("Form data:", data);
+
+    //     // Send data as JSON to server
+    //     try {
+    //         const response = await fetch("https://7f074tk1-4200.inc1.devtunnels.ms/S0001/api/v1/site/add-customer", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify(data), // Convert data to JSON
+    //         });
+
+    //         const result = await response.json();
+    //         if (response.ok) {
+    //             console.log("Customer created successfully", result);
+    //             reset(); // Reset form on success
+    //             navigate("/customers"); // Redirect to customers list
+    //         } else {
+    //             console.error("Error creating customer:", result.message);
+    //         }
+    //     } catch (error) {
+    //         console.error("Network error:", error);
+    //     }
+    // };
     return (
         <>
             <div className="main-view-content" id="contentWrapper">
@@ -52,24 +103,7 @@ const handleCancelForm = () => {
                                                 <h5>Basic Details</h5>
                                             </button>
                                         </li>
-                                        {/* <!-- <li class="nav-item">
-                                            <div class="border-top-item"></div>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button
-                                                class="nav-link"
-                                                id="pills-PermissionDetail-tab"
-                                                data-bs-toggle="pill"
-                                                data-bs-target="#pills-PermissionDetail"
-                                                type="button"
-                                                role="tab"
-                                                aria-controls="pills-PermissionDetail"
-                                                aria-selected="false"
-                                            >
-                                                <h6>Step 2</h6>
-                                                <h5>Permission Detail</h5>
-                                            </button>
-                                        </li> --> */}
+
                                     </ul>
                                 </div>
                             </div>
@@ -88,14 +122,14 @@ const handleCancelForm = () => {
 
                                             <div className="col-12 col-md-6 col-lg-4">
                                                 <div className="form-group mb-3">
-                                                    <label for="shiftName" className="form-label">Firm Name
+                                                    <label for="name" className="form-label">Firm Name
                                                         <span className="text-danger">*</span></label>
-                                                    <input type="text" className="form-control" placeholder="Shift Name" id="shiftName"
+                                                    <input type="text" className="form-control" placeholder="Shift Name" id="name"
                                                         aria-describedby="emailHelp"
                                                         // required
-                                                        {...register('firmName', { required: 'firm name is required' })} />
-                                                    {errors.firmName && <div className="form-text text-danger ">
-                                                        {errors.firmName.message}
+                                                        {...register('name', { required: 'firm name is required' })} />
+                                                    {errors.name && <div className="form-text text-danger ">
+                                                        {errors.name.message}
                                                     </div>}
                                                 </div>
                                             </div>
@@ -116,10 +150,10 @@ const handleCancelForm = () => {
                                                 <div className="form-group mb-3">
                                                     <label for="check-Out" className="form-label">Contact Number</label>
                                                     <input type="number" className="form-control" placeholder="Enter Contact No." id="check-Out"
-                                                        {...register("contactNumber", { required: 'contact-number is required' })}
+                                                        {...register("phone", { required: 'contact-number is required' })}
                                                     />
-                                                    {errors.contactNumber && <div className="form-text text-danger ">
-                                                        {errors.contactNumber.message}
+                                                    {errors.phone && <div className="form-text text-danger ">
+                                                        {errors.phone.message}
                                                     </div>}
                                                 </div>
                                             </div>
@@ -140,9 +174,9 @@ const handleCancelForm = () => {
                                                 <div className="form-group mb-3">
                                                     <label for="Early-count" className="form-label">GST Number</label>
                                                     <input type="number" className="form-control" placeholder="Enter GST Number" id="Early-count"
-                                                        {...register('gst', { required: 'GST-number is required' })} />
-                                                    {errors.gst && <div className="form-text text-danger ">
-                                                        {errors.gst.message}
+                                                        {...register('gstNumber', { required: 'GST-number is required' })} />
+                                                    {errors.gstNumber && <div className="form-text text-danger ">
+                                                        {errors.gstNumber.message}
                                                     </div>}
                                                 </div>
                                             </div>

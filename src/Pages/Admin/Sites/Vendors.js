@@ -1,32 +1,62 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from '../../../icons'
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faChevronDown } from '../../../icons'
 import { RoutesLink } from "../../../ApiHelper/RoutesLink";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import TableFooter from "../../../components/common";
 import CommonTable from "../../../components/common/CommonTable";
+import CommonHeader from "../../../components/common/CommonHeader";
+import CommonSearchBar from "../../../components/common/CommonSearchBar";
 
 export default function Vendors() {
-    const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
-    // <td>01</td>
-    //   <td>VISHAVAM COMPUTERS</td>
-    //   <td>Service</td>
-    //   <td>admin@shreenathenergy.com</td>
-    //   <td>NA</td>
-    //   <td>9660090386</td>
+    // const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
+    const [status, setStatus] = React.useState(false)
 
-    const headers = ["#", "Firm", "Vendor Type", "Email", 'Contact Person', 'Contact Number', "Status", "Action"];
-    const data = [
-        [
-            "01",
-            'VISHAVAM COMPUTERS',
-            'Service',
-            'admin@shreenathenrgy.com',
-            'NA',
-            '65328965320,',
-            <span className="badge bg-green-25 fw-normal rounded-pill">Active</span>,
-        ],
+    const handleStatus = () => {
+        setStatus(!status)
+    }
+
+    const tableHeaders = [
+        { label: '#', value: 'id' },
+        { label: 'Firm', value: 'firmName' },
+        { label: 'Vendor Type', value: 'vendorType' },
+        { label: 'Email', value: 'email' },
+        { label: 'Contact Person', value: 'contactName' },
+        { label: 'Contact Number', value: 'contactNumber' },
+        { label: 'Status', value: 'status' },
+
+    ]
+    const tableData = [
+
+    
+        {
+            id: '01',
+            firmName: 'VISHAVAM COMPUTERS',
+            vendorType: 'Service',
+            email: 'admin@shreenathenergy.com',
+            contactName: 'NA',
+            contactNumber: '8965326589',
+            status: <div className="dropdown action-drop">
+                <button onClick={handleStatus} className="btn link  dropdown-toggle d-flex gap-2" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span className="badge bg-green-25 fw-normal rounded-pill">Active</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                        fill="none">
+                        <path d="M6.40039 8.19922L10.0004 11.7992L13.6004 8.19922" stroke="#a1a1a1"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <ul className={status ? "dropdown-menu show" : "dropdown-menu"}>
+                    <li><Link className="dropdown-item" to="#"><span
+                        className="badge bg-green-25 fw-normal rounded-pill">Active</span></Link></li>
+
+                    <li><Link className="dropdown-item" to="#"><span
+                        className="badge bg-red-25 fw-normal rounded-pill">Deactive</span></Link></li>
+                </ul>
+            </div>
+
+        }
     ]
 
     const actions = [
@@ -36,45 +66,14 @@ export default function Vendors() {
 
     return (
         <>
-            <div className={barIconClicked ? "main-view-content main-wrapper-w" : "main-view-content"} id="contentWrapper">
+            <div className="main-view-content" id="contentWrapper">
                 <div className="content">
-                    <div className="content-head mb-5 d-flex align-items-start justify-content-between">
-                        <h1 className="mb-0">Vendor</h1>
-                        <Link to={RoutesLink?.add_vendor_route} className="btn btn-primary">Add New Vendor</Link>
-                    </div>
+
+                    <CommonHeader tittle={'Vendor'} routesLink={RoutesLink?.add_vendor_route} linkName={'Add New Vendor'} />
                     <div className="card mb-4">
                         <div className="card-body">
-                            <div className="table-head d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
-                                <div className="position-relative">
-                                    <span className="search-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path
-                                                d="M16.7499 16.75L13.4874 13.4875M15.25 9.25C15.25 12.5637 12.5637 15.25 9.25 15.25C5.93629 15.25 3.25 12.5637 3.25 9.25C3.25 5.93629 5.93629 3.25 9.25 3.25C12.5637 3.25 15.25 5.93629 15.25 9.25Z"
-                                                stroke="#818898" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
-                                    <input type="text" className="form-control search-control" id="searchUsers" placeholder="Search" />
-                                </div>
-                                <div className="d-flex align-items-stretch justify-content-end gap-3 ">
-
-                                    <button className="btn btn-outline-primary">
-                                        <svg className='text-primary' xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
-                                            <path
-                                                d="M5.55556 8.5H8.44444V7.16667H5.55556V8.5ZM0.5 0.5V1.83333H13.5V0.5H0.5ZM2.66667 5.16667H11.3333V3.83333H2.66667V5.16667Z"
-                                                fill="#3085FE"></path>
-                                        </svg>
-
-                                    </button>
-                                    {/* <button className="btn btn-outline-primary">
-                                        <svg className="text-primary" xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
-                                            <path
-                                                d="M5.55556 8.5H8.44444V7.16667H5.55556V8.5ZM0.5 0.5V1.83333H13.5V0.5H0.5ZM2.66667 5.16667H11.3333V3.83333H2.66667V5.16667Z"
-                                                fill="#662d91"></path>
-                                        </svg>
-                                    </button> */}
-                                </div>
-                            </div>
-                            <CommonTable tableHeaders={headers} tableData={data} actions={actions} />
+                            <CommonSearchBar showIcon={true} />
+                            <CommonTable tableHeaders={tableHeaders} tableData={tableData} actions={actions} />
                             <TableFooter />
                         </div>
                     </div>

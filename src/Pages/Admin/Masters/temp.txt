@@ -1,0 +1,708 @@
+!important :
+change in customer;
+change in sidebar's autofill customer field;
+make search feature in customer;
+dew delete feature in customer;
+make add customer ;
+make list of customer;
+dew sorting and paggination in customer ;
+dew sidebar rearrangement;
+site , customer , vendor same create , delete , listing , searching , paggination , edit 
+make sub to sub pages when click on specific site;     
+
+
+     
+      <div className="main-view-content" id="contentWrapper">
+                <div className="content">
+                    <div className="content-head mb-5 d-flex align-items-start justify-content-between">
+                        <h1 className="mb-0">Department</h1>
+                        <div className="d-flex align-items-center gap-3">
+                            <Link to="" onClick={toggleOpenModal} data-bs-toggle="modal" role="button" class="btn btn-outline-primary px-5">
+                                {/* <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 9 10" fill="none">
+                                        <path d="M4.66016 1.32031V9" stroke="#662d91" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M0.820312 5.16016H8.5" stroke="#662d91" stroke-linecap="round" stroke-linejoin="round">
+                                        </path>
+                                    </svg>
+                                </span> */}
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 9 10" fill="none">
+                                        <path d="M4.66016 1.32031V9" stroke="#3085FE" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M0.820312 5.16016H8.5" stroke="#3085FE" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                                Add Department
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <div className="card-body">
+                            <div className="table-head d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
+                                <div className="position-relative">
+                                    <span className="search-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path
+                                                d="M16.7499 16.75L13.4874 13.4875M15.25 9.25C15.25 12.5637 12.5637 15.25 9.25 15.25C5.93629 15.25 3.25 12.5637 3.25 9.25C3.25 5.93629 5.93629 3.25 9.25 3.25C12.5637 3.25 15.25 5.93629 15.25 9.25Z"
+                                                stroke="#818898" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <input type="text" className="form-control search-control" id="searchUsers" placeholder="Search" />
+                                </div>
+                                <div className="d-flex align-items-stretch justify-content-end gap-3">
+                                    <button className="btn btn-outline-primary" type="button">
+                                        Export
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="manage-table main-table table-responsive">
+                                <table className="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th className="text-start">Department name</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01</td>
+                                            <td className="text-start">O & M</td>
+                                            <td>
+                                                <div className="dropdown d-inline-block">
+                                                    <button className="btn btn-white dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fas fa-ellipsis-v fs-14 text-primary"></i>
+                                                    </button>
+                                                    <ul className="dropdown-menu shadow-lg">
+                                                        <li>
+                                                            <Link className="dropdown-item" href="#addDepartmentModal" data-bs-toggle="modal">
+                                                                <i className="far fa-edit"></i>
+                                                                Edit</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link className="dropdown-item" href="#deleteModal" data-bs-toggle="modal">
+                                                                <i className="fas fa-trash-alt"></i>
+                                                                Delete</Link>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>02</td>
+                                            <td className="text-start">Accounts</td>
+                                            <td>
+                                                <div className="dropdown d-inline-block">
+                                                    <button className="btn btn-white dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i className="fas fa-ellipsis-v fs-14 text-primary"></i>
+                                                    </button>
+                                                    <ul className="dropdown-menu shadow-lg">
+                                                        <li>
+                                                            <Link className="dropdown-item" to="#addDepartmentModal" data-bs-toggle="modal">
+                                                                <i className="far fa-edit"></i>
+                                                                Edit</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link className="dropdown-item" to="#deleteModal" data-bs-toggle="modal">
+                                                                <i className="fas fa-trash-alt"></i>
+                                                                Delete</Link>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>03</td>
+                                            <td className="text-start">Projects</td>
+                                            <td>
+                                                <div className="dropdown d-inline-block">
+                                                    <button className="btn btn-white dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i className="fas fa-ellipsis-v fs-14 text-primary"></i>
+                                                    </button>
+                                                    <ul className="dropdown-menu shadow-lg">
+                                                        <li>
+                                                            <Link className="dropdown-item" href="#addDepartmentModal" data-bs-toggle="modal">
+                                                                <i className="far fa-edit"></i>
+                                                                Edit</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link className="dropdown-item" to="#deleteModal" data-bs-toggle="modal">
+                                                                <i className="fas fa-trash-alt"></i>
+                                                                Delete</Link>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr className="d-none">
+                                            <td colspan="3" className="text-center fw-bold">
+                                                No Data Found
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="table-footer">
+                                <div className="sorted">
+                                    <h5>Sort by:</h5>
+                                    <div className="dropdown">
+                                        <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            30
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M6.40039 8.19922L10.0004 11.7992L13.6004 8.19922" stroke="#36394A" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <ul className="dropdown-menu shadow-lg">
+                                            <li><Link className="dropdown-item" to="#">10</Link></li>
+                                            <li>
+                                                <Link className="dropdown-item" to="#">20</Link>
+                                            </li>
+                                            <li>
+                                                <Link className="dropdown-item" to="#">30</Link>
+                                            </li>
+                                            <li>
+                                                <Link className="dropdown-item" to="#">40</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="">
+                                    <nav className="paggination-nav" aria-label="Page navigation example">
+                                        <ul className="paggination">
+                                            <li className="page-item">
+                                                <Link className="page-link" to="#" aria-label="Previous">
+                                                    <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 20 20" fill="none">
+                                                        <path d="M11.8002 13.6004L8.2002 10.0004L11.8002 6.40039" stroke="#666D80"
+                                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg></span>
+                                                </Link>
+                                            </li>
+                                            <li className="page-item">
+                                                <Link className="page-link active" to="#">1</Link>
+                                            </li>
+                                            <li className="page-item">
+                                                <Link className="page-link" to="#">2</Link>
+                                            </li>
+                                            <li className="page-item">
+                                                <Link className="page-link" to="#">3</Link>
+                                            </li>
+                                            <li className="page-item">
+                                                <Link className="page-link" to="#">...</Link>
+                                            </li>
+                                            <li className="page-item">
+                                                <Link className="page-link" to="#">7</Link>
+                                            </li>
+                                            <li className="page-item">
+                                                <Link className="page-link" to="#" aria-label="Next">
+                                                    <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 20 20" fill="none">
+                                                        <path d="M8.2002 13.6004L11.8002 10.0004L8.2002 6.40039" stroke="#666D80"
+                                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg></span>
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             {openModal && <AddDepartmentModal openModal={openModal} toggleOpenModal={toggleOpenModal}/> }
+
+             
+
+                ////////////////////////update the sidebar component////////////////////// 
+
+                                        ////// update the sidebar component///////
+import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import SidebarIcon from './SidebarIcon'; // Import the new SidebarIcon component
+
+const Sidebar = ({ role, RoutesLink }) => {
+    const [isActive, setIsActive] = useState('');
+    const [sites, setSites] = useState(false);
+
+    const toggleIsActive = (name) => setIsActive(name);
+    const toggleSites = () => setSites(!sites);
+
+    const menuItems = useMemo(() => [
+        {
+            name: 'dashboard',
+            label: 'Dashboard',
+            route: RoutesLink?.dashboard_route,
+            iconPath: "m460.414 216.518-85.6-73.1c...",
+        },
+        {
+            name: 'sites',
+            label: 'Sites',
+            route: RoutesLink?.sites_route,
+            iconPath: "M18.179 39.571A1.002 1.002...",
+            subMenu: [
+                {
+                    name: 'vendor',
+                    label: 'Vendors',
+                    route: RoutesLink?.vendors_route,
+                    iconPath: "m498.52 219.49-52.86-20.46c...",
+                },
+            ],
+        },
+    ], [RoutesLink]);
+
+    return (
+        role === 'admin' && (
+            <div className="sidebar-inner">
+                <nav className="aside-nav">
+                    <ul className="sidebar-vertical">
+                        <li><span className="menu-title">Menu</span></li>
+
+                        {menuItems.map((item) => (
+                            <li key={item.name}>
+                                <Link 
+                                    to={item.route}
+                                    onClick={() => toggleIsActive(item.name)}
+                                    className={isActive === item.name ? "drop-link active" : "drop-link"} 
+                                    role="button"
+                                >
+                                    <SidebarIcon path={item.iconPath} />
+                                    <span>{item.label}</span>
+                                </Link>
+
+                                {item.subMenu && (
+                                    <>
+                                        <button className="drop-link btn-menu" onClick={toggleSites} role="button">
+                                            <span className="menu-title border-0 p-0 m-0">{item.label}</span>
+                                            <svg className={sites ? "chevron ms-auto dropdown rotate" : "chevron ms-auto dropdown"} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                                <path d="M6.4 8.2L10 11.8 13.6 8.2" stroke="#818898" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </button>
+
+                                        <ul className="sub-menu" style={{ display: sites ? 'block' : 'none' }}>
+                                            {item.subMenu.map((subItem) => (
+                                                <li key={subItem.name}>
+                                                    <Link
+                                                        to={subItem.route}
+                                                        onClick={() => toggleIsActive(subItem.name)}
+                                                        className={isActive === subItem.name ? "drop-link active" : "drop-link"}
+                                                        role="button"
+                                                    >
+                                                        <SidebarIcon path={subItem.iconPath} />
+                                                        <span>{subItem.label}</span>
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
+        )
+    );
+};
+
+export default Sidebar;
+                                                  //////////////////////
+ with seperate icon file 
+ import React from 'react';
+
+const SidebarIcon = ({ path, viewBox = "0 0 64 64", width = "18", height = "18" }) => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox={viewBox} style={{ enableBackground: "new 0 0 512 512" }}>
+            <g>
+                <path d={path} fill="#000000" opacity="1" data-original="#000000"></path>
+            </g>
+        </svg>
+    );
+};
+
+export default SidebarIcon;
+
+
+     ///////////////////////////////   form for form data ////////////////////////
+
+import React from "react";
+import { Link } from "react-router-dom";
+import { RoutesLink } from "../ApiHelper/RoutesLink";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { callApi } from "../ApiHelper/apiHelper"; // Import your API helper
+
+export default function AddCustomerForm() {
+    const { register, reset, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate();
+
+    const handleCancelForm = () => {
+        navigate(RoutesLink?.customers_route);
+    }
+
+    const onSubmit = async (data) => {
+        console.log('form submitted', data);
+        try {
+            // Make the API call to create a new customer
+            const response = await callApi("https://7f074tk1-4200.inc1.devtunnels.ms/S0001/api/v1/site/create-customer", {
+                method: "POST",
+                body: JSON.stringify(data), // Convert form data to JSON
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+            console.log('Customer created:', response.data);
+            // Redirect to the customer list after successful creation
+            navigate(RoutesLink?.customers_route);
+        } catch (error) {
+            console.error("Error creating customer:", error);
+            // You might want to handle error notifications here
+        }
+        reset(); // Reset the form fields
+    }
+
+    return (
+        <>
+            <div className="main-view-content" id="contentWrapper">
+                <div className="content container-fluid">
+                    <div className="content-head mb-5 d-flex align-items-center justify-content-between">
+                        <div className="d-flex align-items-center justify-content-start gap-4">
+                            <Link to={RoutesLink?.customers_route} role="button" className="btn back-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    width="24" height="24" x="0" y="0" viewBox="0 0 24 24" style={{ enableBackground: "new 0 0 24 24" }}>
+                                    <g>
+                                        <path
+                                            d="M22 11H4.414l5.293-5.293a1 1 0 1 0-1.414-1.414l-7 7a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414-1.414L4.414 13H22a1 1 0 0 0 0-2z"
+                                            fill="#25476a" />
+                                    </g>
+                                </svg>
+                            </Link>
+                            <h1 className="mb-0">Add New Customer</h1>
+                        </div>
+                    </div>
+
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="card mb-4">
+                            <div className="card-body">
+                                <div className="wizard-tabs">
+                                    <ul className="nav nav-pills" id="pills-tab" role="tablist">
+                                        <li className="nav-item" role="presentation">
+                                            <button className="nav-link active" id="pills-BasicDetails-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-BasicDetails" type="button" role="tab" aria-controls="pills-BasicDetails"
+                                                aria-selected="true">
+                                                <h6>Step 1</h6>
+                                                <h5>Basic Details</h5>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="card">
+                            <div className="card-body">
+                                <div className="tab-content" id="pills-tabContent">
+                                    <div className="tab-pane fade show active" id="pills-BasicDetails" role="tabpanel"
+                                        aria-labelledby="pills-BasicDetails-tab" tabIndex="0">
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <h4 className="fs-3 rajdhani-semibold my-4 border-bottom pb-3">
+                                                    Normal Details
+                                                </h4>
+                                            </div>
+
+                                            <div className="col-12 col-md-6 col-lg-4">
+                                                <div className="form-group mb-3">
+                                                    <label htmlFor="shiftName" className="form-label">Firm Name
+                                                        <span className="text-danger">*</span></label>
+                                                    <input type="text" className="form-control" placeholder="Shift Name" id="shiftName"
+                                                        {...register('firmName', { required: 'firm name is required' })} />
+                                                    {errors.firmName && <div className="form-text text-danger ">
+                                                        {errors.firmName.message}
+                                                    </div>}
+                                                </div>
+                                            </div>
+
+                                            <div className="col-12 col-md-6 col-lg-4">
+                                                <div className="form-group mb-3">
+                                                    <label htmlFor="EndTime" className="form-label">Email</label>
+                                                    <input type="email" className="form-control" id="EndTime" placeholder="Enter Email"
+                                                        {...register('email', { required: 'e-mail is required' })} />
+                                                    {errors.email && <div className="form-text text-danger ">
+                                                        {errors.email.message}
+                                                    </div>}
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-md-6 col-lg-4">
+                                                <div className="form-group mb-3">
+                                                    <label htmlFor="check-Out" className="form-label">Contact Number</label>
+                                                    <input type="number" className="form-control" placeholder="Enter Contact No." id="check-Out"
+                                                        {...register("contactNumber", { required: 'contact-number is required' })} />
+                                                    {errors.contactNumber && <div className="form-text text-danger ">
+                                                        {errors.contactNumber.message}
+                                                    </div>}
+                                                </div>
+                                            </div>
+
+                                            <div className="col-12 col-md-6 col-lg-4">
+                                                <div className="form-group mb-3">
+                                                    <label htmlFor="Address" className="form-label">Address
+                                                        <span className="text-danger">*</span></label>
+                                                    <textarea className="form-control" id="Address" rows="3"
+                                                        {...register('address', { required: 'address is required' })}></textarea>
+                                                    {errors.address && <div className="form-text text-danger ">
+                                                        {errors.address.message}
+                                                    </div>}
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-md-6 col-lg-4">
+                                                <div className="form-group mb-3">
+                                                    <label htmlFor="Early-count" className="form-label">GST Number</label>
+                                                    <input type="text" className="form-control" placeholder="Enter GST Number" id="Early-count"
+                                                        {...register('gst', { required: 'GST-number is required' })} />
+                                                    {errors.gst && <div className="form-text text-danger ">
+                                                        {errors.gst.message}
+                                                    </div>}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="d-flex align-items-center justify-content-end gap-4">
+                                            <button onClick={handleCancelForm} className="btn btn-secondary px-5" type="button">
+                                                Cancel
+                                            </button>
+                                            <button className="btn btn-primary px-5" type="submit">
+                                                Create
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </>
+    );
+}
+
+
+
+                          ///////////////// the code with delete modal //////////
+import { React, useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import TableFooter from "../../../components/common";
+import { RoutesLink } from "../../../ApiHelper/RoutesLink";
+
+import CommonHeader from "../../../components/common/CommonHeader";
+import CommonTable from "../../../components/common/CommonTable";
+import CommonSearchBar from "../../../components/common/CommonSearchBar";
+import { callApi } from "../../../ApiHelper/apiHelper";
+import DeleteModal from "../../../components/Modals/DeleteModal";
+
+export default function Customers() {
+
+    // const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
+    const [customers, setCustomers] = useState([]);
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [selectedCustomer, setSelectedCustomer] = useState(null)
+    const [deleteModal, setDeleteModal] = useState(false)
+
+
+    const tableHeaders = [
+        { label: '#', value: 'index' },
+        // {label:'#' , value:'id'},
+        { label: 'Firm', value: 'name' },
+        { label: 'Email', value: 'email' },
+        { label: 'ContactNumber', value: 'phone' },
+        { label: 'Address', value: 'address' },
+        { label: 'GSTIN', value: 'gstNumber' },
+
+    ]
+    // const headers = ["#", "Firm", "Email", 'Contact Number', 'Address', 'GSTIN', "Action"];
+
+
+    const actions = [
+        { label: "Edit", icon: "far fa-edit", link: "#addDesignationModal", modalToggle: "modal" },
+        { label: "Delete", icon: "fas fa-trash-alt", link: "#deleteModal", onclick: (id) => handleDeleteCustomer(id) },
+    ];
+
+    const handleDeleteCustomer = (id) => {
+        setSelectedCustomer(id)
+        deleteModal(true)
+    }
+
+    const deleteCustomer = async () => {
+        try {
+            await callApi(`https://7f074tk1-4200.inc1.devtunnels.ms/S0001/api/v1/site/delete-customer/${selectedCustomer}`, {
+                method: 'DELETE'
+            })
+            setCustomers(customers.filter((customer) => customer.id != selectedCustomer.id))
+        } catch (error) {
+            console.log('error deleting customer', error);
+            setError('failed to delete customer')
+
+        } finally {
+            setDeleteModal(false)
+            setSelectedCustomer(null)
+        }
+    }
+
+    useEffect(() => {
+        const fetchCustomers = async () => {
+            setLoading(true)
+            try {
+                const response = await callApi("https://7f074tk1-4200.inc1.devtunnels.ms/S0001/api/v1/site/get-customer"); // Replace with your API URL
+                console.log("Fetched customers:", response.data); // Log the correct data
+                setCustomers(response.data); // Set tableData to response.data
+            } catch (error) {
+                console.error("Error fetching customers:", error);
+            } finally {
+                setLoading(false)
+            }
+        };
+
+        fetchCustomers();
+    }, []);
+
+    console.log(customers);
+
+    const formattedCustomers = customers.map((customer, index) => ({
+        ...customer,
+        index: String(index + 1).padStart(2, '0'), // Format index with leading zeros
+    }));
+
+
+    return (
+        <>
+            <div className="main-view-content" id="contentWrapper">
+                <div className="content">
+                    <CommonHeader tittle={'Customer'} routesLink={RoutesLink?.add_customer_route} linkName={'Add New Customer'} />
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <CommonSearchBar showIcon={true} />
+                            {loading ? (
+                                <div className="text-center">Loading...</div> // Loading indicator
+                            ) : error ? (
+                                <div className="text-center text-danger">{error}</div> // Error message
+                            ) : (
+                                <CommonTable tableHeaders={tableHeaders}
+                                    tableData={formattedCustomers}
+                                    //   tableData={customers} 
+                                    actions={actions} />
+                            )}
+                            {/* <CommonTable tableHeaders={tableHeaders} tableData={customers} actions={actions} /> */}
+                            <TableFooter />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <DeleteModal deleteModal={deleteModal} toggleDeleteModal={() => setDeleteModal(false)} deleteCustomer={deleteCustomer} />
+        </>
+    )
+}
+
+               ///////////////////////// the code without delete ///////////////////////////////////
+
+                            //////////  /////////////
+import { React, useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import TableFooter from "../../../components/common";
+import { RoutesLink } from "../../../ApiHelper/RoutesLink";
+import { useSelector } from "react-redux";
+import CommonHeader from "../../../components/common/CommonHeader";
+import CommonTable from "../../../components/common/CommonTable";
+import CommonSearchBar from "../../../components/common/CommonSearchBar";
+import { callApi } from "../../../ApiHelper/apiHelper";
+
+export default function Customers() {
+    const [openDropDown, setOpenDropDown] = useState(false)
+    const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
+    const [customers, setCustomers] = useState([]);
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
+
+    const toggleDropDown = () => {
+        setOpenDropDown(!openDropDown)
+    }
+    const tableHeaders = [
+        { label: '#', value: 'index' },
+        // {label:'#' , value:'id'},
+        { label: 'Firm', value: 'name' },
+        { label: 'Email', value: 'email' },
+        { label: 'ContactNumber', value: 'phone' },
+        { label: 'Address', value: 'address' },
+        { label: 'GSTIN', value: 'gstNumber' },
+
+    ]
+    // const headers = ["#", "Firm", "Email", 'Contact Number', 'Address', 'GSTIN', "Action"];
+
+
+    const actions = [
+        { label: "Edit", icon: "far fa-edit", link: "#addDesignationModal", modalToggle: "modal" },
+        { label: "Delete", icon: "fas fa-trash-alt", link: "#deleteModal", modalToggle: "modal" },
+    ];
+
+
+
+    useEffect(() => {
+        const fetchCustomers = async () => {
+            setLoading(true)
+            try {
+                const response = await callApi("https://7f074tk1-4200.inc1.devtunnels.ms/S0001/api/v1/site/get-customer"); // Replace with your API URL
+                console.log("Fetched customers:", response.data); // Log the correct data
+                setCustomers(response.data); // Set tableData to response.data
+            } catch (error) {
+                console.error("Error fetching customers:", error);
+            } finally {
+                setLoading(false)
+            }
+        };
+
+        fetchCustomers();
+    }, []);
+
+    console.log(customers);
+
+    const formattedCustomers = customers.map((customer, index) => ({
+        ...customer,
+        index: String(index + 1).padStart(2, '0'), // Format index with leading zeros
+    }));
+
+
+    return (
+        <>
+            <div className={barIconClicked ? "main-view-content main-wrapper-w" : "main-view-content"} id="contentWrapper">
+                <div className="content">
+                    <CommonHeader tittle={'Customer'} routesLink={RoutesLink?.add_customer_route} linkName={'Add New Customer'} />
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <CommonSearchBar showIcon={true} />
+                            {loading ? (
+                                <div className="text-center">Loading...</div> // Loading indicator
+                            ) : error ? (
+                                <div className="text-center text-danger">{error}</div> // Error message
+                            ) : (
+                                <CommonTable tableHeaders={tableHeaders}
+                                    tableData={formattedCustomers}
+                                    //   tableData={customers} 
+                                    actions={actions} />
+                            )}
+                            {/* <CommonTable tableHeaders={tableHeaders} tableData={customers} actions={actions} /> */}
+                            <TableFooter />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}                            
+

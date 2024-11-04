@@ -13,7 +13,7 @@ export default function Layout() {
         {/* <Header/> */} 
         {/* if admin then show this sidebar else show user's sidebar */}
         <Header/>
-          <Sidebar/>
+          <Sidebar role={'admin'}/>
            <Outlet/>
         </>
     )

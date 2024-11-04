@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { RoutesLink } from "../../../ApiHelper/RoutesLink";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import TableFooter from "../../../components/common";
 import CommonTable from "../../../components/common/CommonTable";
 import CommonHeader from "../../../components/common/CommonHeader";
+import CommonSearchBar from "../../../components/common/CommonSearchBar";
 
 export default function Sites() {
     const [action, setAction] = React.useState('O&M')
-    const [openDropDown, setOpenDropDown] = React.useState(false)
-    const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
+    // const [openDropDown, setOpenDropDown] = React.useState(false)
+    // const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
 
     const toggleAction = (value) => {
         setAction(value)
@@ -18,40 +19,30 @@ export default function Sites() {
     // const toggleDropDown = () => {
     //     setOpenDropDown(!openDropDown)
     // }
-    const toggleDropDown = (id) => {
-        setOpenDropDown(openDropDown === id ? null : id);
-    };
-    const headers = ["#", "Site", "Customers", "Location", "Status", "Action"];
-    const data = [
-        [
-            "01",
-            <Link to="/site-details/1" className="text-black">22.3 MW GAJNER(RAJ)</Link>,
-            "HINDUJA RENEWABLE",
-            "Gajner, Bikaner-334001",
-            <span className="badge bg-green-25 fw-normal rounded-pill">Active</span>,
-        ],
-        [
-            "01",
-            <Link to="/site-details/1" className="text-black">22.3 MW GAJNER(RAJ)</Link>,
-            "HINDUJA RENEWABLE",
-            "Gajner, Bikaner-334001",
-            <span className="badge bg-green-25 fw-normal rounded-pill">Active</span>,
-        ],
-        [
-            "01",
-            <Link to="/site-details/1" className="text-black">22.3 MW GAJNER(RAJ)</Link>,
-            "HINDUJA RENEWABLE",
-            "Gajner, Bikaner-334001",
-            <span className="badge bg-green-25 fw-normal rounded-pill">Active</span>,
-        ],
-        [
-            "01",
-            <Link to="/site-details/1" className="text-black">22.3 MW GAJNER(RAJ)</Link>,
-            "HINDUJA RENEWABLE",
-            "Gajner, Bikaner-334001",
-            <span className="badge bg-green-25 fw-normal rounded-pill">Active</span>,
-        ],
-        // Add more rows here
+    // const toggleDropDown = (id) => {
+    //     setOpenDropDown(openDropDown === id ? null : id);
+    // };
+
+
+    const tableHeaders = [
+        { label: '#', value: 'id' },
+        { label: 'Site', value: 'siteName' },
+        { label: 'Customers', value: 'customerName' },
+        { label: 'Loacation', value: 'locationName' },
+        { label: 'Status', value: 'status' }
+    ]
+
+    
+    const tableData = [
+      
+        {
+            id: '01',
+            siteName: <Link to='/site-details/1' className="text-black">22.3 MW GAJNER(RAJ)</Link>,
+            customerName:'HINDUJA RENEWABLE',
+            locationName:'Gajner, Bikaner-334001',
+            status:<span className="badge bg-green-25 fw-normal rounded-pill">Active</span>
+        }
+
     ];
 
     const actions = [
@@ -63,7 +54,7 @@ export default function Sites() {
     return (
         <>
 
-            <div className={barIconClicked ? "main-view-content main-wrapper-w" : "main-view-content"} id="contentWrapper">
+            <div className="main-view-content" id="contentWrapper">
                 <div class="content">
                     {/* <div className="content-head mb-5 d-flex align-items-start justify-content-between">
                         <h1 className="mb-0">Sites</h1>
@@ -77,7 +68,7 @@ export default function Sites() {
                             </Link>
                         </div>
                     </div> */}
-                    <CommonHeader tittle={'Sites'}  routesLink={RoutesLink?.add_site_route} linkName={'Add New Site'} icon={'fas fa-plus'}/>
+                    <CommonHeader tittle={'Sites'} routesLink={RoutesLink?.add_site_route} linkName={'Add New Site'} icon={'fas fa-plus'} />
                     <div className="card">
                         {/* changes in btn css match  */}
                         <div className="card-body">
@@ -94,20 +85,8 @@ export default function Sites() {
                             <div className="tab-content mt-4" id="nav-tabContent">
                                 {action === 'O&M' && (<div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
                                     tabindex="0">
-                                    <div className="table-head mb-4 border-bottom pb-3">
-
-                                        <div className="position-relative">
-                                            <span className="search-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                    <path
-                                                        d="M16.7499 16.75L13.4874 13.4875M15.25 9.25C15.25 12.5637 12.5637 15.25 9.25 15.25C5.93629 15.25 3.25 12.5637 3.25 9.25C3.25 5.93629 5.93629 3.25 9.25 3.25C12.5637 3.25 15.25 5.93629 15.25 9.25Z"
-                                                        stroke="#818898" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </span>
-                                            <input type="text" className="form-control search-control" id="searchUsers" placeholder="Search" />
-                                        </div>
-                                    </div>
-                                    <CommonTable tableHeaders={headers} tableData={''} actions={actions} />
+                                <CommonSearchBar/>
+                                    <CommonTable tableHeaders={tableHeaders} tableData={tableData} actions={actions} />
                                     <TableFooter />
                                 </div>)}
 
@@ -127,7 +106,7 @@ export default function Sites() {
                                             <input type="text" class="form-control search-control" id="searchUsers" placeholder="Search" />
                                         </div>
                                     </div>
-                                    <CommonTable tableHeaders={headers} tableData={data} actions={actions} />
+                                    <CommonTable tableHeaders={tableHeaders} tableData={tableData} actions={actions} />
                                     <TableFooter />
                                 </div>)}
                             </div>

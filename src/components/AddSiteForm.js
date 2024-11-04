@@ -1,18 +1,32 @@
-import React from "react";
+import {React , useEffect , useState} from "react";
 import { Link } from "react-router-dom";
 import { RoutesLink } from "../ApiHelper/RoutesLink";
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
+import { callApi } from "../ApiHelper/apiHelper";
 // import { useSelector } from "react-redux";
 
 export default function AddSiteForm() {
     // const barIconClicked = useSelector((state) => state.barIcon.barIconClicked)
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
 
-    const customers = ["hariom", "khinvraj", "ravi", "ramesh"]
-    const siteType = ["O&M", "Project"]
+    const [customers, setCustomers] = useState([]);
+    const siteType = ["O&M", "Project"];
+
+    // Fetch customers on component mount
+    useEffect(() => {
+        const fetchCustomers = async () => {
+            try {
+                const response = await callApi("https://7f074tk1-4200.inc1.devtunnels.ms/S0001/api/v1/site/get-customer"); // Replace with your API endpoint
+                setCustomers(response.data); // Assuming response data contains an array of customer names
+            } catch (error) {
+                console.error("Error fetching customers:", error);
+            }
+        };
+        fetchCustomers();
+    }, []);
 
     const onSubmit = (data) => {
         console.log('form submitted', data);
@@ -20,7 +34,7 @@ export default function AddSiteForm() {
     }
 
     const handleCancelForm = () => {
-       navigate(RoutesLink?.sites_route)
+        navigate(RoutesLink?.sites_route)
     }
 
     return (
@@ -30,6 +44,7 @@ export default function AddSiteForm() {
                     <div className="content-head mb-5 d-flex align-items-center justify-content-between">
                         <div className="d-flex align-items-center justify-content-start gap-4">
                             <Link to={RoutesLink?.sites_route} role="button" className="btn back-arrow">
+   
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" x="0" y="0" viewBox="0 0 24 24" style={{ enableBackground: "new 0 0 24 24" }} className="">
                                     <g>
                                         <path d="M22 11H4.414l5.293-5.293a1 1 0 1 0-1.414-1.414l-7 7a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414-1.414L4.414 13H22a1 1 0 0 0 0-2z" fill="#25476a" opacity="1" data-original="#25476a" class=""></path>
@@ -91,7 +106,14 @@ export default function AddSiteForm() {
                                             <div className="col-12 col-md-6 col-lg-4">
                                                 <div className="form-group mb-3">
                                                     <label for="Role" className="form-label">Customer</label>
-                                                    <select className="form-select form-control" aria-label="Default select example"
+                                                    <select style={{ maxHeight: '155px', overflowY: 'auto' }} className="form-select form-control" aria-label="Default select example"
+                                                        {...register('customer', { required: 'Customer is required' })}>
+                                                        <option value=''  className="">Select Customer </option>
+                                                        {customers.map((customer, index) =>
+                                                            <option  key={index} value={customer.name}>{customer.name}</option>
+                                                        )}
+                                                    </select>
+                                                    {/* <select className="form-select form-control" aria-label="Default select example"
                                                         {...register('customer', { required: 'customer is required' })}
                                                     >
                                                         <option value='' className="">Select Customer </option>
@@ -99,7 +121,7 @@ export default function AddSiteForm() {
                                                             <option key={index} value={custm}>{custm}</option>
                                                         )}
 
-                                                    </select>
+                                                    </select> */}
                                                     {errors.customer && <div className="form-text text-danger ">
                                                         {errors.customer.message}
                                                     </div>}
@@ -141,7 +163,7 @@ export default function AddSiteForm() {
                                             <button onClick={handleCancelForm} className="btn btn-secondary px-4" type="button">
                                                 Cancel
                                             </button>
-                                            <button  className="btn btn-primary px-4" type="submit">
+                                            <button className="btn btn-primary px-4" type="submit">
                                                 Create
                                             </button>
                                         </div>
